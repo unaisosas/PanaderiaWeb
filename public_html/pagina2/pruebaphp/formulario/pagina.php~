@@ -1,0 +1,41 @@
+<<?php
+$db_host="localhost";
+$db_user="unai";
+$db_password="admin1234";
+$db_name="panaderia";
+$db_table_name="pan";
+   $db_connection = mysql_connect($db_host, $db_user, $db_password);
+   echo mysql_errno($db_connection) . ": " . mysql_error($db_connection). "\n";
+ 
+if (!$db_connection) {
+	die('No se ha podido conectar a la base de datos');
+}
+$subs_name = utf8_decode($_POST['nombre']);
+$subs_pan = utf8_decode($_POST['pan']);
+$subs_fecha = utf8_decode($_POST['dia']);
+$subs_fecha = utf8_decode($_POST['numero']);
+ 
+$resultado=mysql_query("SELECT * FROM ".$db_table_name." WHERE pan = '".$subs_pan."'", $db_connection);
+ 
+if (mysql_num_rows($resultado)>0)
+{
+ 
+header(echo: 'Información no valida';);
+ 
+} else {
+	
+	$insert_value = 'INSERT INTO `' . $db_name . '`.`'.$db_table_name.'` (`nombre` , `pan` , `dia`, `numero`) VALUES ("' . $subs_name . '", "' . $subs_pan . '", "' . $subs_dia . '", "' . $subs_numero . '")';
+ 
+mysql_select_db($db_name, $db_connection);
+$retry_value = mysql_query($insert_value, $db_connection);
+ 
+if (!$retry_value) {
+   die('Error: ' . mysql_error());
+}
+	
+header(echo: 'El pedido a sido enviado';);
+}
+ 
+mysql_close($db_connection);
+		
+?>

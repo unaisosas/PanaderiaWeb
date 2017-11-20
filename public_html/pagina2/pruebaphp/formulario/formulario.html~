@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Formulario</title>
+	<LINK REL=StyleSheet HREF="../../../pagina1/Css/reloj.css" TYPE="text/css" MEDIA=screen>
+	<script type="text/javascript" src="../../../pagina1/JS/reloj.js"></script>
+	</head>
+	
+	<body onload="startTime()">
+		<form method="POST" action="pagina.php">
+			 <p>Nombre: <input type="text" name="nombre" /></p>
+			 <p>Cantidad pan: <input type="int" maxlength="100" name="pan" /></p>
+			 <p>Fecha de pedido:<input type="text" name="dia" /></p>
+			 <p>Numero de telefono: <input type="text" name="numero" /></p>
+			 <p><input type="submit" /></p>
+		</form>
+		<div id="clockdate">
+ 	 <div class="clockdate-wrapper">
+    <div id="clock"></div>
+    <div id="date"></div>
+ 	 </div>
+		</div>
+
+	</body>
+</html>
+
+

@@ -1,0 +1,57 @@
+<html>
+<head>
+	<LINK REL=StyleSheet HREF="../Css/pag1.css" TYPE="text/css" MEDIA=screen>
+	<div id="pans" style="background-color:#333333;padding:50px;">
+	<h1>Panaderia</h1>
+	</div>
+</head>
+<body style="background-image:url('../Imagenes/back1.jpg')">
+
+<ul>
+  <li><a class="active" href="#Panaderia">Panaderia</a></li>
+  <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Productos</a>
+  <div class="dropdown-content">
+		<a href="http://www.unai.pagina2.eus/pruebaphp/formulario/formulario.php">Pan</a>
+		<a href="#Bollos">Bollos</a>
+		<a href="#Pasteles">Pasteles</a>
+		<a href="http://www.unai.pagina2.eus/pruebaphp/formulario/visualizar.php">Visualizar pedidos</a>
+	</div>
+  </li>
+  <li><a href="#Contactar">Contactar</a></li>
+  <li><a href="#Horarios">Horarios</a></li>
+</ul>
+
+
+<img src="../Imagenes/pan2.jpg" alt="panadero" align="left" style="width:600px;height:600px; padding:50px;"> 
+<div id="texto">
+<h1>Panaderia Ogietxe</h1>
+La pasión, el esfuerzo y la dedicación todos los días del año al oficio es una de las claves más importantes para explicar  el exito del funcionamiento de esta panadería-pastelería.  El respeto a la profesión y las ganas de hacerlo cada día  mejor tanto en el pan, en bollería como en la pastelería es  lo que empuja cada día al personal de Ogietxe a trabajar  con entusiasmo e ilusión.
+</div>
+<script language="JavaScript">
+function mueveReloj(){
+    momentoActual = new Date()
+    hora = momentoActual.getHours()
+    minuto = momentoActual.getMinutes()
+    segundo = momentoActual.getSeconds()
+
+    str_segundo = new String (segundo)
+    if (str_segundo.length == 1)
+       segundo = "0" + segundo
+
+    str_minuto = new String (minuto)
+    if (str_minuto.length == 1)
+       minuto = "0" + minuto
+
+    str_hora = new String (hora)
+    if (str_hora.length == 1)
+       hora = "0" + hora
+
+    horaImprimible = hora + " : " + minuto + " : " + segundo
+
+    document.form_reloj.reloj.value = horaImprimible
+
+    setTimeout("mueveReloj()",1000)
+}
+</script> 
+</body>
+</html>
